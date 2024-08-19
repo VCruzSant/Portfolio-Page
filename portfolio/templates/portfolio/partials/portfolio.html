@@ -1,0 +1,22 @@
+<section class="projects" id="projects">
+    <h2 class="heading">Projects</h2>
+
+    <div class="projects-container">
+        {% if recipe.cover.url is not Null %}
+            <div class="recipe-cover">
+                <a href="{% url "recipes:recipe" recipe.id %}">
+                <img src="{{recipe.cover.url}}" alt="temp">
+                </a>
+            </div>
+        {% endif %}
+        <div class="project-box">
+            <div class="project-info">
+                <h4>Django Project: Recipe</h4>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore veritatis dolorem aut, sunt unde quos!</p>
+            </div>
+        </div>
+        {% if is_detail_page %}
+        Mostrar Detail Project
+        {% endif %}
+    </div>
+</section>

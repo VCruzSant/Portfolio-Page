@@ -1,0 +1,25 @@
+{% extends "global/base.html" %}
+
+{% block content %}
+    <section class="home" id="#home">
+        <div class="home-content">
+            <h1>Olá, sou <span>Vinicius</span></h1>
+            <h3 class="text-animation">Sou <span></span></h3>
+            <p>Estou realizando bacharel em Ciência da Computação, atualmente aprimorando habilidades com um foco específico em Django Web e Django Rest Framework. Possuo uma sólida expertise em Desenvolvimento Python, com especialização em integrações avançadas e tecnologias como Django, mySQL, Docker, SQLite, PySide6, Selenium, Regexp, TDD, POO e Design Patterns GoF. Minha experiência se estende também à hospedagem em ambientes de nuvem, com destaque para Google Cloud e AWS.</p>
+
+            <div class="social-icons">
+                <a href="https://www.linkedin.com/in/vcruzsantiago/"><i class='bx bxl-linkedin' ></i></a>
+                <a href="https://github.com/VCruzSant"><i class='bx bxl-github'></i></a>
+            </div>
+            <div class="btn-group">
+                <a href="#projects" class="btn">Projects</a>
+                
+            </div>
+            <div class="home-img">
+                <img src="image.jpg" alt="">
+            </div>
+        </div>
+    </section>
+
+    {% include "portfolio/partials/portfolio.html" %}
+{% endblock content %}

@@ -36,6 +36,7 @@ class Project(models.Model):
     objects = ProjectManager()
     title = models.CharField(max_length=65)
     description = models.CharField(max_length=165)
+    detail_project = models.CharField(max_length=255, default='')
     slug = models.SlugField(unique=True)
     is_published = models.BooleanField(default=False)
     cover = models.ImageField(
