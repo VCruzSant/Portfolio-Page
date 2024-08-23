@@ -1,10 +1,10 @@
 <header class="header">
-    <a href="#home" class="logo">Vinicius <span>Santiago</span></a>
+    <a href="{% url "portfolio:home" %}" class="logo">Vinicius <span>Santiago</span></a>
 
     <i class='bx bx-menu' id="menu-icon"></i>
 
     <nav class="navbar">
-        <a href="#home" class="active">Home</a>
-        <a href="#projects" class="active">Projects</a>
+        <a href="{% url "portfolio:home" %}" class="active">Home</a>
+        <a href="{% url "portfolio:home" %}#projects" class="active">Projects</a>
     </nav>
 </header>

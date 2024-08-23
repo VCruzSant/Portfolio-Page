@@ -18,10 +18,14 @@ Including another URLconf
 
 from django.urls import path
 
-from . import views
+from .views import list_view, detail_view
 
 app_name = 'portfolio'
 
 urlpatterns = [
-    path('', views.home, name='home')
+    path('', list_view.ProjectListView.as_view(), name='home'),
+    path(
+        'project/<int:pk>/', detail_view.ProjectDetailView.as_view(),
+        name='project'
+    ),
 ]

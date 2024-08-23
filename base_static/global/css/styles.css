@@ -12,8 +12,9 @@
 :root {
     --bg-color: #080808;
     --second-bg-color: #141414;
-    --text-color: white;
+    --text-color: rgb(221, 237, 233);
     --main-color: #00ffee;
+    --spacing-gutter-medium: 3rem;
 }
 
 html{
@@ -25,6 +26,125 @@ body{
     background: var(--bg-color);
     color: var(--text-color);
 }
+
+img {
+    max-width: 100%;
+}
+
+.main-content {
+    padding-top: 0;
+}
+
+.main-content-detail .portfolio-list-item {
+    max-width: 84rem;
+    margin: 0 auto;
+}
+
+.main-content-detail .portfolio-list-item:hover {
+    transform: scale(1);
+    box-shadow: -10px 10px 20px var(--main-color);
+}
+
+.container {
+    max-width: 144rem;
+    margin: 0 auto;
+    padding: var(--spacing-gutter-medium);
+    
+}
+
+.portfolio {
+    box-shadow: -5px 5px 10px var(--main-color);
+    transform: scale(1);
+    transition: all 300ms ease-in-out;
+    border-radius: .7rem;
+    overflow: hidden;
+}
+
+.portfolio-list-item {
+    max-width: 64rem;
+    height: fit-content;
+    background: var(--bg-color);
+}
+
+.portfolio-list-item:hover {
+    transform: scale(1.02);
+    box-shadow: -10px 10px 20px var(--main-color);
+}
+
+.portfolio-title-container {
+    padding: var(--spacing-gutter-medium);
+    padding-bottom: 2rem;
+    
+}
+
+.portfolio-title-container a{
+    text-decoration: none;
+    color: var(--main-color)
+}
+
+.portfolio-author {
+    padding: 0 var(--spacing-gutter-medium);
+}
+
+.portfolio-content {
+    padding: var(--spacing-gutter-medium);
+    padding-top: 2rem;
+}
+
+.portfolio-author-item {
+    margin-right: 1rem;
+}
+
+.portfolio-author a {
+    transition: all 300ms ease-in-out;
+    text-decoration: none;
+}
+
+.portfolio-content {
+    padding: var(--spacing-gutter-medium);
+    padding-top: 2rem;
+    color: var(--text-color)
+    
+}
+
+.portfolio-footer a {
+    background: var(--bg-color);
+    display: block;
+    color: var(--text-color);
+    text-decoration: none;
+    text-align: center;
+    padding: 1rem var(--spacing-gutter-medium);
+    transition: all 300ms ease-in-out;
+}
+
+.portfolio-footer a:hover {
+    filter: brightness(1.5);
+}
+
+.preparation-steps{
+    padding: var(--spacing-gutter-medium);
+}
+
+.preparation-steps h1,
+.preparation-steps h2,
+.preparation-steps h3,
+.preparation-steps h4,
+.preparation-steps h5,
+.preparation-steps h6,
+.preparation-steps p,
+.preparation-steps ul,
+.preparation-steps ol,
+.preparation-steps pre {
+    margin: 2rem 0;
+}
+
+.preparation-steps ul,
+.preparation-steps ol {
+    margin: 2rem;
+    padding: 0.2rem;
+    
+}
+
 
 .header {
     position: fixed;
@@ -301,7 +421,6 @@ span{
 }
 
 .projects {
-    background: var(--bg-color);
     color: black;
 }
 
@@ -312,7 +431,7 @@ span{
 
 .projects-container {
     display: grid;
-    grid-template-columns: repeat(2,1fr);
+    grid-template-columns: repeat(3,1fr);
     align-items: center;
     gap: 2.5rem;
 }
