@@ -8,7 +8,7 @@ from ..models import Project
 class ProjectDetailView(DetailView):
     model = Project
     context_object_name = 'project'
-    template_name = 'portfolio/pages/projects.html'
+    template_name = 'portfolio/pages/project_detail.html'
 
     def get_context_data(self, **kwargs) -> dict:
         context = super().get_context_data(**kwargs)
