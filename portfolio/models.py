@@ -1,13 +1,12 @@
-import os
 import string
-from PIL import Image
 from random import SystemRandom
 
 from django.db import models
 from django.contrib.auth.models import User
 from django.utils.text import slugify
+from django_summernote.models import AbstractAttachment
 
-from project import settings
+from utils.resizer import resize_image
 
 # Create your models here.
 
@@ -16,6 +15,24 @@ from project import settings
 # cover
 # category (Relação)
 # Author (Relação)
+
+
+class ProjectAttachment(AbstractAttachment):
+    def save(self, *args, **kwargs):
+        if not self.name:
+            self.name = self.file.name
+
+        current_file_name = str(self.file.name)
+        super_save = super().save(*args, **kwargs)
+        file_changed = False
+
+        if self.file:
+            file_changed = current_file_name != self.file.name
+
+        if file_changed:
+            resize_image(self.file)
+
+        return super_save
 
 
 class Category(models.Model):
@@ -54,26 +71,6 @@ class Project(models.Model):
     def __str__(self):
         return self.title
 
-    @staticmethod
-    def resize_image(image, new_width=800):
-        image_full_path = os.path.join(settings.MEDIA_ROOT, image.name)
-        image_pillow = Image.open(image_full_path)
-        original_width, original_height = image_pillow.size
-
-        if original_width <= new_width:
-            image_pillow.close()
-            return
-
-        new_height = round((new_width * original_height) / original_width)
-
-        new_image = image_pillow.resize(
-            (new_width, new_height), Image.LANCZOS)  # type: ignore
-        new_image.save(
-            image_full_path,
-            optimize=True,
-            quality=50,
-        )
-
     def save(self, *args, **kwargs):
         if not self.slug:
             rand_letters = ''.join(
@@ -87,7 +84,7 @@ class Project(models.Model):
 
         if self.cover:
             try:
-                self.resize_image(self.cover)
+                resize_image(self.cover)
             except FileNotFoundError:
                 ...
 
