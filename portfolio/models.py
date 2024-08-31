@@ -37,10 +37,12 @@ class Project(models.Model):
     title = models.CharField(max_length=65)
     description = models.CharField(max_length=165)
     detail_project = models.TextField()
+    link = models.CharField(max_length=65, blank=True, default='')
+    link_git = models.CharField(max_length=65, blank=True, default='')
     slug = models.SlugField(unique=True)
     is_published = models.BooleanField(default=False)
     cover = models.ImageField(
-        upload_to='recipes/covers/%Y/%m/%d', blank=True, default=''
+        upload_to='project/covers/%Y/%m/%d', blank=True, default=''
     )
     category = models.ForeignKey(
         Category, on_delete=models.SET_NULL, null=True, default=None
@@ -90,3 +92,9 @@ class Project(models.Model):
                 ...
 
         return saved
+
+
+class Portfolio(models.Model):
+    photo = models.ImageField(
+        upload_to='project/photo/%Y/%m/%d', blank=True, default=''
+    )

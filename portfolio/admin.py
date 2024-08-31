@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Category, Project
+from .models import Category, Project, Portfolio
 # Register your models here.
 
 
@@ -19,3 +19,8 @@ class ProjectAdmin(admin.ModelAdmin):
     prepopulated_fields = {
         "slug": ('title',)
     }
+
+
+@admin.register(Portfolio)
+class PortfolioAdmin(admin.ModelAdmin):
+    list_display = 'id', 'photo'

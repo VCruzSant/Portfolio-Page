@@ -15,9 +15,12 @@
                 <a href="#projects" class="btn">Projects</a>
                 
             </div>
-            <div class="home-img">
-                <img src="image.jpg" alt="">
-            </div>
+        </div>
+
+        <div class="home-img">
+            {% for image in portfolio_images %}
+                <img src="{{ image.photo.url }}" alt="Portfolio Image">
+            {% endfor %}
         </div>
     </section>
 
