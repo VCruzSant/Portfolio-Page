@@ -685,7 +685,7 @@ span{
 
 .social{
     text-align: center;
-    padding-bottom: 25px;
+    padding-bottom: 20px;
     color: var(--main-color);
 }
 
@@ -742,80 +742,73 @@ span{
 
 }
 
-@media(max-widht:1285px){
+
+@media (max-width: 1200px) {
     html {
         font-size: 55%;
     }
-    .projects-container{
-        padding-bottom: 7rem;
-        grid-template-columns: repeat(2,1fr);
-        margin: 0 5rem;
-
-    }
 }
-@media(max-widht:991){
-    html{
-        padding: 2rem 3%;
+
+@media (max-width: 991px) {
+    .header {
+        padding: 2rem;
     }
-    section{
+
+    section {
         padding: 10rem 3% 2rem;
     }
-    .projects{
-        padding-bottom: 7rem;
-    }
-    .footer{
+
+    .footer {
         padding: 2rem 3%;
     }
 
+    .portfolio {
+        padding-bottom: 7rem;
+
+    }
 }
-@media(max-widht:895px){
-    #menu-icon{
-        display: block;
+
+@media (max-width: 768px) {
+    .header {
+        padding: 2rem;
     }
-    .navbar{
-        position: absolute;
-        top: 100%;
-        right: 0;
-        width: 50%;
-        padding: 1rem 3%;
-        background-color: rgba(0, 0, 0, 0.75);
-        backdrop-filter: blur(20px);
-        border-bottom-left-radius: 2rem;
-        border-left: 2px solid var(--main-color);
-        border-bottom: 2px solid var(--main-color);
-        display: none;
+
+    section {
+        padding: 10rem 3% 2rem;
     }
-    .navbar .active{
-        display: block;
+
+    .footer {
+        padding: 2rem 3%;
     }
-    .navbar a{
-        display: block;
-        font-size: 2rem;
-        margin: 3rem 0;
-        color: white;
+
+    .home {
+        flex-direction: column;
     }
-    .home{
-        flex-direction: column-reverse;
-        margin: 4rem 5rem;
-    }
-    .home-content h3{
+
+    .home-content h3 {
         font-size: 2.6rem;
     }
+
     .home-content h1{
-        font-size: 8rem;
-        margin-top: 3rem;
+        font-size: 2.6rem;
     }
-    .home-content p{
-        max-width: 600px;
-        margin: 0 auto;
-    }
+
     .home-img img {
-        width: 56vw;
+        width: 70vw;
+        margin-bottom: 7rem;
     }
-    .projects h2{
+
+    .portfolio h2 {
         margin-bottom: 3rem;
     }
-    .projects-container{
-        grid-template-columns: repeat(1,1fr);
+
+    .portfolio-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 617px) {
+    .portfolio-container{
+        grid-template-columns: 1fr;
     }
 }
