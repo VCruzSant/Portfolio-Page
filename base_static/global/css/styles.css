@@ -93,6 +93,13 @@ h6 {
   
 }
 
+.single-post img {
+    max-width: 100%; /* Garante que a imagem não ultrapasse a largura do contêiner */
+    height: auto; /* Mantém a proporção da imagem */
+    display: block;
+    margin: 0 auto; /* Centraliza a imagem */
+}
+
 .center {
     text-align: center;
   }
@@ -249,13 +256,13 @@ h6 {
     align-items: center;
     width: 5rem;
     height: 5rem;
-    background: var(--text-color);
+    background: var(--bg-color);
     border-radius: 50%;
 }
 
 .portfolio-layer a i {
-    font-size: 2rem;
-    color: var(--second-bg-color);
+    font-size: 2.5rem;
+    color: var(--text-color);
 }
 
 
@@ -742,12 +749,23 @@ span{
 
 }
 
+@media (max-width: 1700px) {
+    .portfolio-box {
+        height: 25rem;
+    }
+}
 
 @media (max-width: 1200px) {
     html {
         font-size: 55%;
     }
+
+    .section-content-narrow {
+        max-width: 60rem; /* Ajusta a largura máxima para telas de tamanho médio */
+    }
 }
+
+
 
 @media (max-width: 991px) {
     .header {
@@ -765,6 +783,10 @@ span{
     .portfolio {
         padding-bottom: 7rem;
 
+    }
+
+    .portfolio-box {
+        height: 22rem;
     }
 }
 
@@ -805,10 +827,66 @@ span{
     .portfolio-container {
         grid-template-columns: repeat(2, 1fr);
     }
+
+    .portfolio-box {
+        height: 22rem;
+    }
+
+    .section-gap {
+        padding: 5rem 1.5rem; /* Reduz o espaçamento em telas menores */
+    }
+
+    .single-post-title,
+    .single-post-excerpt {
+        font-size: 24px; /* Diminui o tamanho da fonte em telas menores */
+    }
+
+    .single-post-content {
+        font-size: 1.2rem; /* Diminui o tamanho da fonte do conteúdo */
+    }
+
+    .pb-base {
+        padding-bottom: 1.5rem; /* Reduz o padding-bottom */
+    }
+
+    .separator {
+        width: 80%; /* Aumenta a largura da linha separadora para melhorar a aparência */
+    }
+
+    .post-meta {
+        flex-direction: column; /* Empilha os elementos em uma coluna */
+        gap: 1rem; /* Reduz o espaço entre os elementos */
+    }
+
+    .section-content-narrow {
+        max-width: 90%; /* Quase a largura completa em dispositivos móveis */
+    }
 }
 
 @media (max-width: 617px) {
     .portfolio-container{
         grid-template-columns: 1fr;
+    }
+
+    .portfolio-box {
+        height: 25rem;
+    }
+    
+}
+
+
+@media (max-width: 480px) {
+    .single-post-title,
+    .single-post-excerpt {
+        font-size: 20px; /* Fontes menores para telas muito pequenas */
+    }
+
+    .section-gap {
+        padding: 3rem 1rem; /* Reduz o espaçamento ainda mais */
+    }
+
+    .post-meta {
+        flex-direction: column; /* Empilha os itens da meta em colunas */
+        align-items: flex-start; /* Alinha à esquerda */
     }
 }
